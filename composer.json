@@ -1,0 +1,19 @@
+{
+    "name": "softce/banner",
+    "description": "Module for working with the banner. Add, change images",
+    "authors": [
+        {
+            "name": "tphpdeveloper",
+            "email": "igorkutsan@ukr.net"
+        }
+    ],
+    "require": {
+        "php" : ">=7.0",
+        "laravel/framework": "5.5.*"
+
+    },
+    "require-dev":{
+        "phpunit/phpunit": "*"
+    }
+
+}
