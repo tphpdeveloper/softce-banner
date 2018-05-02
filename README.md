@@ -87,7 +87,7 @@ php artisan config:cache
 //delete table -> banners
 
 7.
-//delete migration -> 2018_04_26_113110_create_banner_table
+//delete migration -> 2018_05_02_120251_create_banner_table
 
 8.
 //delete row in admin_menus table -> where name 'Банер'
