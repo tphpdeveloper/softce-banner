@@ -20,7 +20,7 @@ class BannerController extends AdminController
     }
 
     /**
-     * Show list slide
+     * Show list banner
      */
     public function index()
     {
@@ -30,7 +30,7 @@ class BannerController extends AdminController
     }
 
     /**
-     * Create new slide
+     * Create new banner
      * @param BannerRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -54,7 +54,7 @@ class BannerController extends AdminController
     }
 
     /**
-     * Update slide
+     * Update banner
      * @param BannerRequest $request
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
@@ -81,7 +81,7 @@ class BannerController extends AdminController
     }
 
     /**
-     * Delete slide
+     * Delete banner
      * @param $id_banner
      * @return \Illuminate\Http\RedirectResponse
      */
