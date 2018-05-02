@@ -7,6 +7,6 @@ Route::group([
     'middleware' => ['web']
     ],function(){
 
-    Route::resource( '/slider', 'BannerController', [ 'as' => 'admin', 'only' => ['index', 'store', 'update', 'destroy'] ] );
+    Route::resource( '/banner', 'BannerController', [ 'as' => 'admin', 'only' => ['index', 'store', 'update', 'destroy'] ] );
 
 });

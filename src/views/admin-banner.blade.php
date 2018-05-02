@@ -1,7 +1,7 @@
 @extends('mage2-ecommerce::admin.layouts.app')
 
 @section('content')
-    @include('mage2-ecommerce::admin.lang-triger.triger')
+    
     <div class="box">
         <div class="box-header">
             <h2>
