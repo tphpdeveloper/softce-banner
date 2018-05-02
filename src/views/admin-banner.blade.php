@@ -1,7 +1,7 @@
 @extends('mage2-ecommerce::admin.layouts.app')
 
 @section('content')
-    
+
     <div class="box">
         <div class="box-header">
             <h2>
@@ -23,11 +23,12 @@
 
         </div>
         <div class="box-body">
-            <table class="table table-striped">
+            <table class="table  table-hover options_table js-data_grid_table">
                 <thead>
                     <tr>
                         <th>№</th>
                         <th>Изображение</th>
+                        <th>URL</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -39,6 +40,10 @@
                             <td>
                                 <img  style="width: 250px; height: auto;" src="{{ asset($path_banner.'/'.$model->path) }}" alt="" >
                                 <input form="admin-banner-update-{{ $model->id }}" type="file" name="banner" >
+                            </td>
+                            <td>
+
+                                <input class="form-control" type="url" form="admin-banner-update-{{ $model->id }}" name="uri" value="{{ $model->uri or '' }}">
                             </td>
                             <td>
                                 {{--update slide info--}}

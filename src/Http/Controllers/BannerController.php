@@ -63,14 +63,14 @@ class BannerController extends AdminController
     {
         $banner = Banner::find($id);
         if($banner){
-            $new_slide = $request->file('slide');
-            $banner->text = $request->text;
+            $new_banner = $request->file('banner');
+            $banner->uri = $request->uri;
 
-            if($new_slide){
+            if($new_banner){
                 File::delete(public_path($this->path_banner.'/'.$banner->path));
 
-                $name_file = $new_slide->getClientOriginalName();
-                $new_slide->move(public_path($this->path_banner), $name_file);
+                $name_file = $new_banner->getClientOriginalName();
+                $new_banner->move(public_path($this->path_banner), $name_file);
                 $banner->path = $name_file;
             }
             $banner->save();

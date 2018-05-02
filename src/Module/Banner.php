@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Banner extends Model
 {
-    protected $fillable = ['path'];
+    protected $fillable = ['path', 'uri'];
 }
