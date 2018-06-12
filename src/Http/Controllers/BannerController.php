@@ -15,7 +15,7 @@ class BannerController extends AdminController
 
     public function __construct()
     {
-        $this->middleware(['admin.auth', 'main_lang']);
+        $this->middleware(['admin.auth']);
         $this->path_banner = 'uploads/banner';
     }
 
