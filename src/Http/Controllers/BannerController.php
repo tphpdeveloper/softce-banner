@@ -62,18 +62,19 @@ class BannerController extends AdminController
     public function update(BannerRequest $request, $id)
     {
         $banner = Banner::find($id);
+        $data = $request->except(['_token', 'banner']);
         if($banner){
             $new_banner = $request->file('banner');
-            $banner->uri = $request->uri;
 
             if($new_banner){
                 File::delete(public_path($this->path_banner.'/'.$banner->path));
 
                 $name_file = $new_banner->getClientOriginalName();
                 $new_banner->move(public_path($this->path_banner), $name_file);
-                $banner->path = $name_file;
+                $data['path'] = $name_file;
             }
-            $banner->save();
+
+            $banner->update($data);
 
             return redirect()->route('admin.banner.index')->with('notificationText', 'Банер успешно обновлен');
         }

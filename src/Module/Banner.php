@@ -7,5 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Banner extends Model
 {
-    protected $fillable = ['path', 'uri'];
+
+    use \Themsaid\Multilingual\Translatable;
+
+    protected $fillable = ['title', 'description', 'path', 'uri'];
+
+    public $translatable = ['title', 'description'];
+    public $casts = [
+        'title' => 'array',
+        'description' => 'array'
+    ];
+
 }

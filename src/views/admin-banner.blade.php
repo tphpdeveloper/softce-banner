@@ -1,6 +1,7 @@
 @extends('mage2-ecommerce::admin.layouts.app')
 
 @section('content')
+    @include('mage2-ecommerce::admin.lang-triger.triger')
 
     <div class="box">
         <div class="box-header">
@@ -28,6 +29,8 @@
                     <tr>
                         <th>№</th>
                         <th>Изображение</th>
+                        <th>Заголовок</th>
+                        <th>Описание</th>
                         <th>URL</th>
                         <th></th>
                     </tr>
@@ -42,8 +45,32 @@
                                 <input form="admin-banner-update-{{ $model->id }}" type="file" name="banner" >
                             </td>
                             <td>
-
-                                <input class="form-control" type="url" form="admin-banner-update-{{ $model->id }}" name="uri" value="{{ $model->uri or '' }}">
+                                @include('mage2-ecommerce::forms.text',[
+                                    'name' => 'title',
+                                    'label' => '',
+                                    'attributes' => [
+                                        'class' => 'form-control',
+                                        'lang' => true,
+                                        'form' => 'admin-banner-update-' . $model->id
+                                    ]
+                                ])
+                            </td>
+                            <td>
+                                @include('mage2-ecommerce::forms.textarea',[
+                                     'name' => 'description',
+                                     'label' => '',
+                                     'attributes' => [
+                                         'class' => 'form-control ',
+                                         'id' => 'description',
+                                         'lang' => true,
+                                        'form' => 'admin-banner-update-' . $model->id
+                                     ]
+                                 ])
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" form="admin-banner-update-{{ $model->id }}" name="uri" value="{{ $model->uri or '' }}">
+                                </div>
                             </td>
                             <td>
                                 {{--update slide info--}}
